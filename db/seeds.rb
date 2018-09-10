@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# genres
+raw_genres = RestClient.get("#{ENV['THE_MOVIE_DB_GENRES_URL']}", params: { api_key: "#{ENV['THE_MOVIE_DB_API_KEY']}" })
+
+raw_genres = JSON.parse(raw_genres)
+
+genres = {}
+
+raw_genres["genres"].each do |genre|
+  id = genre["id"]
+  name = genre["name"]
+
+  genres[id] = name  
+end
+
+# movies
+
+
+# shows
+
+# make the above a class! (would be a service object!)
+
