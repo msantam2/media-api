@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :movies, only: [:show]
-  resources :shows,  only: [:show] 
+  namespace :api do
+    resources :movies, only: [:show]
+    resources :shows,  only: [:show] 
+  end
 end
