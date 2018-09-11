@@ -3,8 +3,7 @@ module Api
     attributes :id, :title, :release_year, :synopsis, :genres, :media_type
 
     def media_type
-      id = object.media_type_id
-      Api::MediaType.find_by_id(id).name
+      object.media_type.name
     end
   end
 end
