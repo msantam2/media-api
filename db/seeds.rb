@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# MOVIE GENRES
+puts "Fetching movie genres..."
+
+movie_genres_ref = Api::GenresService.new(:movies).call
+
+puts "Done fetching movie genres.".colorize(:green)
+puts
+
+
+# SHOW GENRES
+puts "Fetching TV show genres..."
+
+show_genres_ref = Api::GenresService.new(:shows).call
+
+puts "Done fetching TV show genres.".colorize(:green)
+puts
+
+
+# MOVIES
+Api::MoviesService.new.call(movie_genres_ref)
+
+
+# SLEEP (in order to not exceed external API's requests/second quota)
+puts
+puts "taking a quick break! be back in 10 (seconds)...".colorize(:blue)
+puts
+sleep(10)
+
+
+# SHOWS
+Api::ShowsService.new.call(show_genres_ref)
+
+
+puts
+puts "Done!".colorize(:green)
