@@ -32,6 +32,8 @@ gem 'rest-client', '~> 2.0', '>= 2.0.2'
 gem 'colorize', '~> 0.8.1'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'pg_search', '~> 2.1', '>= 2.1.2'
+gem 'api-pagination', '~> 4.8', '>= 4.8.1'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -8,8 +8,8 @@ module Api
       result = movies + shows
       return unless result.present?
 
-      render json: result,
-             each_serializer: Api::SearchSerializer
+      paginate json: result,
+               each_serializer: Api::SearchSerializer
     end
   end
 end
