@@ -1,24 +1,62 @@
-# README
+# Media API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This API allows consumers to search for & retrieve information regarding movies & TV shows
 
-Things you may want to cover:
+[API Documentation can be found here](https://mediaapi10.docs.apiary.io/#)
 
-* Ruby version
+### Main Details
+This is a RESTful API built in Ruby on Rails that serves JSON back to the client. The codebase is stored in GitHub and the live API is hosted on Heroku. Documentation is hosted on Apiary, written in the API Blueprint specification.
+There are 3 routes:
+- Get movie by ID
+- Get show by ID
+- Search all media by title
 
-* System dependencies
+### Data Details
+- The data for this app consists of movies, TV shows, and media types
+- The data is fetched from an external API ([The Movie Database](https://www.themoviedb.org/)) and seeded into our PostgreSQL database
+- The external API is very robust and well-documented, providing a clean contract that allowed me to model my relational data very effectively
+- 300 records of each media type for local development, 500 for production (this number can be easily modified by tweaking the environment variables)
+- In order to determine the genres for each media type, I fetch the genre ID's from the external API, and store in a local hash for fast lookup. I then use this data structure to build the 'genres' attribute for each movie & show record.
 
-* Configuration
+### Some Programming Decisions
+- In order to clean up code in DB seeding operation, I made use of Ruby service objects (found in app/services directory)
+- I intentionally didn't wrap seeding operation (when persisting to the DB) in a transaction. If a record fails to save, it's OK, it's not the end of the world. We can tolerate imperfect data at the moment. I didn't experience this issue at all, though.
+- Used integers for movie & show ID's, instead of UUID's. Makes for a friendlier request URL. Would most likely use UUID in a bigger, real production app though!
 
-* Database creation
+### Deployment Strategy
+- Deployed onto Heroku
+- Utilized Heroku Pipelines to have a Development, Staging, and Production app.
+- Can tweak environment of apps independently of one another
+- Performed continuous delivery by integrating with GitHub repo
 
-* Database initialization
+### Third-Party Gems Harnessed
+- 'rest-client' (for consuming external API)
+- 'active_model_serializers' (for cleaner JSON serialization)
+- 'pg_search' (for Search endpoint, leveraging postgres full text search)
+- 'api-pagination' (wrapper for rendering paginated JSON)
+- 'kaminari' (the actual gem performing the pagination)
+- 'dotenv-rails' (to easily manage environment variables in local development)
+- 'colorize' (to make the seed command CLI nice and pretty - see below :)
 
-* How to run the test suite
+### Screenshots
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Seeding operation
+<img src="https://s3.amazonaws.com/media-api-ms/seed-cli.png" width="600" height="400" />
 
-* Deployment instructions
+#### Movies in DB
+<img src="https://s3.amazonaws.com/media-api-ms/movies-in-db.png" width="600" height="400" />
 
-* ...
+#### Shows in DB
+<img src="https://s3.amazonaws.com/media-api-ms/shows-in-db.png" width="600" height="400" />
+
+#### GET Movie endpoint
+<img src="https://s3.amazonaws.com/media-api-ms/get-movie.png" width="600" height="400" />
+
+#### GET Show endpoint
+<img src="https://s3.amazonaws.com/media-api-ms/get-show.png" width="600" height="400" />
+
+#### Paginated Search endpoint
+<img src="https://s3.amazonaws.com/media-api-ms/paginated-search.png" width="600" height="400" />
+
+#### Heroku Pipeline
+<img src="https://s3.amazonaws.com/media-api-ms/heroku-pipeline.png" width="600" height="400" />
