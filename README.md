@@ -41,7 +41,7 @@ There are 3 routes:
 ### Screenshots
 
 #### Seeding operation
-<img src="https://s3.amazonaws.com/media-api-ms/seed-cli.png" width="600" height="400" />
+<img src="https://s3.amazonaws.com/media-api-ms/seed-cli.png" width="800" height="500" />
 
 #### Movies in DB
 <img src="https://s3.amazonaws.com/media-api-ms/movies-in-db.png" width="600" height="400" />
@@ -59,4 +59,4 @@ There are 3 routes:
 <img src="https://s3.amazonaws.com/media-api-ms/paginated-search.png" width="600" height="400" />
 
 #### Heroku Pipeline
-<img src="https://s3.amazonaws.com/media-api-ms/heroku-pipeline.png" width="600" height="400" />
+<img src="https://s3.amazonaws.com/media-api-ms/heroku-pipeline.png" width="900" height="400" />
