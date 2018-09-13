@@ -3,6 +3,7 @@
 ### This API allows consumers to search for & retrieve information regarding movies & TV shows
 
 [API Documentation can be found here](https://mediaapi10.docs.apiary.io/#)
+(Please note: I am using the free-tier service on Heroku. This means the first request may be slow while the app 'wakes up'. After this, it should be performant for you.)
 
 ### Main Details
 This is a RESTful API built in Ruby on Rails that serves JSON back to the client. The codebase is stored in GitHub and the live API is hosted on Heroku. Documentation is hosted on Apiary, written in the API Blueprint specification.
