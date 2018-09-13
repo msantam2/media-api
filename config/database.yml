@@ -85,7 +85,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: ENV['GCP_PG_USERNAME']
-  password: ENV['GCP_PG_PASSWORD']
-  database: ENV['GCP_PG_DATABASE']
+  username: "postgres"
+  password: "StudentOfTheCloud321!"
+  database: "media-api-db"
   host: "/cloudsql/media-api-216302:us-west1:media-api"
