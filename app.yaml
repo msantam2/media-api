@@ -17,6 +17,21 @@ runtime: ruby
 env: flex
 entrypoint: bundle exec puma -C config/puma.rb
 
+env_variables:
+  RACK_ENV: production
+  RAILS_ENV: production
+  RAILS_LOG_TO_STDOUT: enabled
+  RAILS_SERVE_STATIC_FILES: enabled
+  SECRET_KEY_BASE: e2da395476d26ed35cebbc85ab9b8e6626ef95469ff59dbb05ecc8a95693fe67922a433145a01bfdf8a87ee9dea098050014f38d8e0f521d88db6edcb154cf34
+  THE_MOVIE_DB_API_KEY: 81e3af33c5759eefeda866813fc2c5cf
+  THE_MOVIE_DB_PAGE_COUNT: 15
+  THE_MOVIE_DB_MOVIE_GENRES_URL: https://api.themoviedb.org/3/genre/movie/list
+  THE_MOVIE_DB_SHOW_GENRES_URL: https://api.themoviedb.org/3/genre/tv/list
+  THE_MOVIE_DB_MOVIES_URL: https://api.themoviedb.org/3/discover/movie
+  THE_MOVIE_DB_SHOWS_URL: https://api.themoviedb.org/3/discover/tv
+  THE_MOVIE_DB_MOVIES_RELEASE_YEAR: 2010
+  THE_MOVIE_DB_SHOWS_RELEASE_YEAR: 2010
+
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
 # for production use. For more information, see:
