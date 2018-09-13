@@ -31,6 +31,14 @@ env_variables:
   THE_MOVIE_DB_SHOWS_URL: https://api.themoviedb.org/3/discover/tv
   THE_MOVIE_DB_MOVIES_RELEASE_YEAR: 2010
   THE_MOVIE_DB_SHOWS_RELEASE_YEAR: 2010
+  GCP_PG_USERNAME: postgres
+  GCP_PG_PASSWORD: StudentOfTheCloud321!
+  GCP_PG_DATABASE: media-api-db
+  GCP_PG_HOST: /cloudsql/media-api-216302:us-west1:media-api
+
+beta_settings:
+  cloud_sql_instances: media-api-216302:us-west1:media-api
+
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate

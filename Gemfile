@@ -35,6 +35,9 @@ gem 'pg_search', '~> 2.1', '>= 2.1.2'
 gem 'api-pagination', '~> 4.8', '>= 4.8.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
+# deployments
+gem 'appengine', '~> 0.4.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

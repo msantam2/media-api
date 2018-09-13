@@ -78,5 +78,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+# for GCP:
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: ENV['GCP_PG_USERNAME']
+  password: ENV['GCP_PG_PASSWORD']
+  database: ENV['GCP_PG_DATABASE']
+  host: ENV['GCP_PG_HOST']
