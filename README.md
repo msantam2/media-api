@@ -30,6 +30,13 @@ There are 3 routes:
 - Can tweak environment of apps independently of one another
 - Performed continuous delivery by integrating with GitHub repo
 
+##### * UPDATE * Additional Deployment Strategy
+I also wanted to deploy this API application onto Google Cloud Platform for further fun :)
+- Hosted on Google Cloud App Engine
+- Integrates with cloud-hosted database: Cloud SQL for PostgreSQL (9.6)
+- Worked with correctly allocating traffic to appropriate version of app
+- Same API as described in the documentation, except the host is "https://media-api-216302.appspot.com/"
+
 ### Third-Party Gems Harnessed
 - 'rest-client' (for consuming external API)
 - 'active_model_serializers' (for cleaner JSON serialization)
