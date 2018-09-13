@@ -8,9 +8,9 @@
 ### Main Details
 This is a RESTful API built in Ruby on Rails that serves JSON back to the client. The codebase is stored in GitHub and the live API is hosted on Heroku. Documentation is hosted on Apiary, written in the API Blueprint specification.
 There are 3 routes:
-- Get movie by ID
-- Get show by ID
-- Search all media by title
+- Get movie by ID [Movie Request sample](https://media-api-prod.herokuapp.com/api/movies/5)
+- Get show by ID [Show Request sample](https://media-api-prod.herokuapp.com/api/shows/8)
+- Search all media by title [Search Request sample](https://media-api-prod.herokuapp.com/api/search?query=king&page[number]=1&page[size]=2)
 
 ### Data Details
 - The data for this app consists of movies, TV shows, and media types
