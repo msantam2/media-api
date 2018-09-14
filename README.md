@@ -2,7 +2,7 @@
 
 ### This API allows consumers to search for & retrieve information regarding movies & TV shows
 
-[API Documentation can be found here](https://mediaapi10.docs.apiary.io/#)
+#### [API Documentation can be found here](https://mediaapi10.docs.apiary.io/#)
 (Please note: I am using the free-tier service on Heroku. This means the first request may be slow while the app 'wakes up'. After this, it should be performant for you.)
 
 ### Main Details
@@ -35,7 +35,8 @@ I also wanted to deploy this API application onto Google Cloud Platform for furt
 - Hosted on Google Cloud App Engine
 - Integrates with cloud-hosted database: Cloud SQL for PostgreSQL (9.6)
 - Worked with correctly allocating traffic to appropriate version of app
-- Same API as described in the documentation, except the host is "https://media-api-216302.appspot.com/"
+- Same API as described in the documentation, except the host is "https://media-api-matt-santa.fun/"
+- This host domain above was registered on Namecheap (DNS provider), and verified by Google to point to my App Engine application ("https://media-api-216302.appspot.com/")
 
 ### Third-Party Gems Harnessed
 - 'rest-client' (for consuming external API)
